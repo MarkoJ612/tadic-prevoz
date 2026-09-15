@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kombi Prevoz Tadić - Useljaji i Iseljaji Beograd | Srpska</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #f59e0b;
+            --accent-light: #fbbf24;
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float-animation {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(245, 158, 11, 0.6); }
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-white);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 1.2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+            animation: float-animation 3s ease-in-out infinite;
+        }
+
+        .logo-text {
+            background: linear-gradient(135deg, white 0%, var(--accent-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-light);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-light);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .dropdown-toggle {
+            display: none;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            border: none;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.6rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+            font-size: 1rem;
+        }
+
+        .dropdown-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+        }
+
+        .dropdown-toggle.open::before {
+            content: '✕';
+            margin-right: 0.5rem;
+        }
+
+        .dropdown-toggle.closed::before {
+            content: '☰';
+            margin-right: 0.5rem;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 0.8rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border: 1px solid rgba(0,0,0,0.1);
+            margin-top: 1rem;
+            z-index: 200;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dropdown-menu.open {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 1.2rem 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--accent) 0%, var(--accent-light) 100%);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+        }
+
+        .dropdown-menu a:hover::before {
+            transform: scaleY(1);
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-toggle {
+                display: inline-block;
+            }
+
+            nav ul {
+                display: none !important;
+            }
+
+            .dropdown-menu {
+                left: 0;
+                right: 0;
+                border-radius: 0 0 0.8rem 0.8rem;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .dropdown-toggle {
+                display: none !important;
+            }
+
+            nav ul {
+                display: flex !important;
+            }
+
+            .dropdown-menu {
+                display: none !important;
+            }
+        }
+
+        .hero {
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #0f172a);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            color: white;
+            padding: 7rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 0.6rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: var(--accent-light);
+            color: var(--accent-light);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 5rem 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 3.5rem;
+            text-align: center;
+            color: var(--primary);
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transform: translateY(-8px);
+            border-color: var(--accent);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+            border-radius: 0.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            padding: 0.6rem 0;
+            color: var(--text-light);
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .price-tag {
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .contact-cta {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.6rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+        }
+
+        .section.bg-light {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .info-card {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transform: translateY(-4px);
+        }
+
+        .info-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .info-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 4rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .contact-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contact-method {
+            padding: 2rem;
+            background: rgba(255,255,255,0.08);
+            border-radius: 1rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            background: rgba(255,255,255,0.12);
+            border-color: rgba(255,255,255,0.3);
+            transform: translateY(-4px);
+        }
+
+        .contact-method h4 {
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .contact-method p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .contact-method a {
+            color: var(--accent-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 0.6rem;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-light);
+            background: rgba(255,255,255,0.12);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        footer {
+            background: #0f0f18;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .highlight {
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+        }
+
+        .experience-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 4rem 1.5rem;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .experience-stat {
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .experience-stat:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transform: translateY(-4px);
+        }
+
+        .experience-stat .number {
+            font-size: 2.8rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .experience-stat p {
+            color: var(--text-light);
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">🚚</span>
+                <span class="logo-text">Kombi Prevoz Tadić</span>
+            </div>
+            <button class="dropdown-toggle closed" id="dropdownToggle"></button>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#useljaji">Useljaji</a></li>
+                    <li><a href="#iseljaji">Iseljaji</a></li>
+                    <li><a href="#srbija">Prevoz po Srbiji</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#useljaji">Useljaji</a>
+                <a href="#iseljaji">Iseljaji</a>
+                <a href="#srbija">Prevoz po Srbiji</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Kombi Prevoz Tadić</h1>
+            <p>Profesionalni useljaji, iseljaji i prevoz u Beogradu i širom Srbije</p>
+            <div class="hero-buttons">
+                <a href="#kontakt" class="btn btn-primary">Zatraži Ponudu</a>
+                <a href="#uslugas" class="btn btn-secondary">Saznaj Više</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience-section">
+        <div class="experience-grid">
+            <div class="experience-stat">
+                <div class="number">500+</div>
+                <p>Zadovoljnih Klijenata</p>
+            </div>
+            <div class="experience-stat">
+                <div class="number">8+</div>
+                <p>Godina Iskustva</p>
+            </div>
+            <div class="experience-stat">
+                <div class="number">24/7</div>
+                <p>Dostupnost</p>
+            </div>
+            <div class="experience-stat">
+                <div class="number">100%</div>
+                <p>Pouzdanost</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="useljaji" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Useljaji</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <h3>Lokalni Prevoz - Useljaji</h3>
+                    <p>Brz i siguran prevoz svih tvojih stvari u nov dom. Naš profesionalni tim će se pobrinuti da sve bude pravilno pakovano i zaštićeno.</p>
+                    <ul class="service-features">
+                        <li>Iskusan tim radnika</li>
+                        <li>Profesionalno pakovanje</li>
+                        <li>Brza usluga (2-4 sata)</li>
+                        <li>Osigurano premještanje</li>
+                    </ul>
+                    <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <h3>Kompletan Servis</h3>
+                    <p>Uključuje pakovanje, transport, raspakovanje i preuređenje. Potpuno rješenje od početka do kraja - mi ćemo se pobrinuti za sve.</p>
+                    <ul class="service-features">
+                        <li>Kompletna usluga</li>
+                        <li>Brzo i profesionalno</li>
+                        <li>Garancija zadovoljstva</li>
+                        <li>Osiguran transport</li>
+                    </ul>
+                    <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="iseljaji" class="section">
+        <div class="container">
+            <h2 class="section-title">Iseljaji</h2>
+            <p style="text-align: center; color: var(--text-light); font-size: 1.1rem; margin-bottom: 3rem;">
+                Bez briga i stresa - mi ćemo sve prebaciti. Pažljivo razpakovavanje i transport sa maksimalnom preciznošću.
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <h3>Osnovni Iseljaji</h3>
+                    <p>Prevoz stvari iz starog doma. Brzo, sigurno i bez brige - samo nam ostavi detaljne upute što trebam prebaciti.</p>
+                    <ul class="service-features">
+                        <li>Pažljivo razpakovavanje</li>
+                        <li>Brzo premještanje</li>
+                        <li>Odgovoran tim</li>
+                        <li>Čist prevoz</li>
+                    </ul>
+                    <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <h3>Premium Iseljaji</h3>
+                    <p>Kompletan servis iseljaja sa raspakavanjem, sortiranjem i preuređenjem stvari na novoj lokaciji.</p>
+                    <ul class="service-features">
+                        <li>Kompletan servis</li>
+                        <li>Raspakovavanje i sortiranje</li>
+                        <li>Preuređenje prostora</li>
+                        <li>Čišćenje starog doma</li>
+                    </ul>
+                    <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <h3>Brzi Iseljaji</h3>
+                    <p>Kada trebam samo prevoz - bez pakovanja i raspakovavanja. Fleksibilan raspored prema tvojim potrebama.</p>
+                    <ul class="service-features">
+                        <li>Brzi transport</li>
+                        <li>Fleksibilan raspored</li>
+                        <li>Siguran prevoz</li>
+                        <li>Bez dodatnih usluga</li>
+                    </ul>
+                    <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="srbija" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Prevoz po Srbiji</h2>
+            <p style="text-align: center; color: var(--text-light); font-size: 1.1rem; margin-bottom: 3rem;">
+                Pokrivamo cijelu Srbiju sa dodatnom naplatom za kilometražu i gorivo. Fleksibilan raspored i profesionalan pristup za sve vrste prevoza.
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <h3>Regionalni Prevoz</h3>
+                    <p>Transport do 100km od Beograda. Idealno za okolinu Beograda i obližnje gradove - brz i pouzdan servis.</p>
+                    <ul class="service-features">
+                        <li>Do 100km od Beograda</li>
+                        <li>Brz transport</li>
+                        <li>Siguran prevoz</li>
+                        <li>+ doplata za km</li>
+                    </ul>
+                    <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <h3>Međuregionalni Prevoz</h3>
+                    <p>Transport na veće udaljenosti - do 300km. Pokrivamo sve veće gradove u Srbiji sa profesionalnim timom.</p>
+                    <ul class="service-features">
+                        <li>Do 300km od Beograda</li>
+                        <li>Dogovoreno vrijeme</li>
+                        <li>Fleksibilan raspored</li>
+                        <li>+ doplata za km</li>
+                    </ul>
+                    <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <h3>Nacionalni Prevoz</h3>
+                    <p>Transport na cijelu Srbiju - bez ograničenja. Za sve vrste robe, namještaja i bilo kakve potrebe.</p>
+                    <ul class="service-features">
+                        <li>Bilo koja lokacija u Srbiji</li>
+                        <li>Dogovoreni datum</li>
+                        <li>Profesionalan pristup</li>
+                        <li>Ponuda po zahtjevu</li>
+                    </ul>
+                    <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
+                </div>
+            </div>
+
+            <div class="info-grid" style="margin-top: 3rem;">
+                <div class="info-card">
+                    <h4>Što je Uključeno?</h4>
+                    <p>Pakovanje, transport, raspakovanje i čišćenje prostora. Kompletan servis prema dogovoru i tvojim potrebama.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Garancija</h4>
+                    <p>Osiguran transport sa garancijom da će sve stvari sigurno doći na odredište bez oštećenja.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Fleksibilnost</h4>
+                    <p>Prilagođavamo se tvojim potrebama i rasporedima. Radi s nama kada ti odgovara, kako god ti trebam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="contact-section">
+        <div class="contact-content">
+            <h2>Kontaktiraj Nas</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Zatraži brzu ponudu ili nam postavi pitanja</p>
+
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h4>📞 Telefon</h4>
+                    <p><a href="tel:+381600000000">+381 60 000 0000</a></p>
+                    <p style="font-size: 0.95rem; margin-top: 0.5rem;">24/7 dostupni</p>
+                </div>
+                <div class="contact-method">
+                    <h4>📧 Email</h4>
+                    <p><a href="mailto:info@kombiprevozTadic.rs">info@kombiprevozTadic.rs</a></p>
+                    <p style="font-size: 0.95rem; margin-top: 0.5rem;">Odgovor za 1 sat</p>
+                </div>
+                <div class="contact-method">
+                    <h4>📍 Lokacija</h4>
+                    <p>Beograd, Srbija</p>
+                    <p style="font-size: 0.95rem; margin-top: 0.5rem;">Posjetite nas</p>
+                </div>
+            </div>
+
+            <div style="max-width: 500px; margin: 3rem auto; text-align: left;">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 700;">Pošalji nam poruku</h3>
+                <form style="background: rgba(255,255,255,0.08); padding: 2.5rem; border-radius: 1rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15);">
+                    <div class="form-group">
+                        <label for="name">Ime i Prezime</label>
+                        <input type="text" id="name" placeholder="Tvoje ime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" placeholder="+381 6X XXX XXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Poruka</label>
+                        <textarea id="message" placeholder="Što te zanima?" required></textarea>
+                    </div>
+                    <button type="submit" class="contact-cta" style="margin-top: 1rem;">Pošalji Poruku</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Kombi Prevoz Tadić. Sva prava zadržana. | Useljaji • Iseljaji • Prevoz | Beograd i Srbija</p>
+    </footer>
+
+    <script>
+        // Dropdown menu toggle
+        const dropdownToggle = document.getElementById('dropdownToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        dropdownToggle.addEventListener('click', function() {
+            dropdownMenu.classList.toggle('open');
+            dropdownToggle.classList.toggle('open');
+            dropdownToggle.classList.toggle('closed');
+        });
+
+        // Close dropdown when link is clicked
+        const dropdownLinks = dropdownMenu.querySelectorAll('a');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                dropdownMenu.classList.remove('open');
+                dropdownToggle.classList.remove('open');
+                dropdownToggle.classList.add('closed');
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.header-container')) {
+                dropdownMenu.classList.remove('open');
+                dropdownToggle.classList.remove('open');
+                dropdownToggle.classList.add('closed');
+            }
+        });
+
+        // Form submission (placeholder - trebate backend za pravi submit)
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const message = document.getElementById('message').value;
+                
+                if (name && phone && message) {
+                    // U praksi, trebate poslati ove podatke na server
+                    alert(`Hvala ${name}! Primili smo tvoju poruku. Kontaktiraćemo te na ${phone}.`);
+                    form.reset();
+                } else {
+                    alert('Molimo popuni sva polja!');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
