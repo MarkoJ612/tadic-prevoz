@@ -2,6 +2,7 @@
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kombi Prevoz Tadić - Useljaji i Iseljaji Beograd | Srpska</title>
     <style>
@@ -14,31 +15,21 @@
         }
 
         :root {
-            --primary: #0f172a;
-            --primary-light: #1e293b;
-            --accent: #f59e0b;
-            --accent-light: #fbbf24;
-            --text-dark: #0f172a;
-            --text-light: #64748b;
-            --bg-light: #f8fafc;
-            --bg-white: #ffffff;
-            --border-color: #e2e8f0;
-        }
+    --primary: #0f172a;
+    --primary-light: #1e293b;
+    --accent: #ea580c;       /* Prava, energična narandžasta */
+    --accent-light: #f97316; /* Svetlija narandžasta za hover efekte */
+    --text-dark: #0f172a;
+    --text-light: #64748b;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --border-color: #e2e8f0;
+}
 
         @keyframes gradient-shift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
-        }
-
-        @keyframes float-animation {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes glow-pulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(245, 158, 11, 0.6); }
         }
 
         body {
@@ -49,16 +40,16 @@
         }
 
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: 1.2rem 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+    background: linear-gradient(135deg, var(--accent) 0%, #ea580c 100%); /* Narančasti gradijent */
+    color: var(--primary); /* Mijenjamo osnovnu boju teksta u tamnoplavu */
+    padding: 0.8rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
 
         .header-container {
             max-width: 1200px;
@@ -70,25 +61,32 @@
         }
 
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 0.7rem;
+            gap: 0.8rem;
             letter-spacing: -0.5px;
+            text-decoration: none;
         }
 
-        .logo-icon {
-            font-size: 1.8rem;
-            animation: float-animation 3s ease-in-out infinite;
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
         }
 
         .logo-text {
-            background: linear-gradient(135deg, white 0%, var(--accent-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    /* Uklonjen stari gradijent */
+    background: none;
+    -webkit-text-fill-color: var(--primary); /* Tamnoplava boja */
+    color: var(--primary);
+}
 
         nav ul {
             list-style: none;
@@ -97,47 +95,52 @@
         }
 
         nav a {
-            color: rgba(255,255,255,0.85);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
+    color: var(--primary); /* Tamnoplava slova */
+    text-decoration: none;
+    font-weight: 600; /* Malo deblja slova za bolju čitljivost */
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
 
-        nav a:hover {
-            color: var(--accent-light);
-        }
+nav a:hover {
+    color: white; /* Bijela boja pri prelasku mišem */
+}
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-light);
-            transition: width 0.3s ease;
-        }
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white; /* Bijela linija ispod linka */
+    transition: width 0.3s ease;
+}
 
         nav a:hover::after {
             width: 100%;
         }
 
         .dropdown-toggle {
-            display: none;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-            border: none;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 0.6rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
-            font-size: 1rem;
-        }
+    /* Dodaj ova tri reda kako bi se sadržaj savršeno centrirao po obe ose */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Zadrži svoja postojeća pravila ispod */
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    border: none;
+    color: white;
+    padding: 0.8rem 1.2rem; /* Možeš ujednačiti padding, npr. padding: 0.8rem; da dugme bude kvadratnije */
+    border-radius: 0.6rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.4);
+    font-size: 1rem;
+}
 
         .dropdown-toggle:hover {
             transform: translateY(-2px);
@@ -145,14 +148,14 @@
         }
 
         .dropdown-toggle.open::before {
-            content: '✕';
-            margin-right: 0.5rem;
-        }
+    content: '✕';
+    margin-right: 0; /* Uklonjeno guranje ulevo */
+}
 
-        .dropdown-toggle.closed::before {
-            content: '☰';
-            margin-right: 0.5rem;
-        }
+.dropdown-toggle.closed::before {
+    content: '☰';
+    margin-right: 0; /* Uklonjeno guranje ulevo */
+}
 
         .dropdown-menu {
             display: none;
@@ -165,7 +168,7 @@
             border-radius: 0.8rem;
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
             border: 1px solid rgba(0,0,0,0.1);
-            margin-top: 1rem;
+            margin-top: 0;
             z-index: 200;
             animation: slideDown 0.3s ease;
         }
@@ -192,7 +195,7 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 1rem;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid #000;
             transition: all 0.3s ease;
             position: relative;
         }
@@ -224,7 +227,25 @@
 
         @media (max-width: 768px) {
             .dropdown-toggle {
-                display: inline-block;
+        display: inline-block;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        box-shadow: 0 4px 15px rgba(15, 23, 42, 0.4);
+        /* ... ostatak ostaje isti ... */
+    }
+
+            .dropdown-toggle:hover {
+                box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+                transform: translateY(-2px);
+            }
+
+            .dropdown-toggle::before {
+                font-size: 1.2rem;
+                color: white;
+                font-weight: 600;
+            }
+
+            .flag-img {
+                display: none !important;
             }
 
             nav ul {
@@ -252,12 +273,13 @@
             }
         }
 
+        /* HERO SEKCIJA SA POZADINSKIM LOGO VODENIM ŽIGOM */
         .hero {
             background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #0f172a);
             background-size: 400% 400%;
             animation: gradient-shift 15s ease infinite;
             color: white;
-            padding: 7rem 1.5rem;
+            padding: 8rem 1.5rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -273,13 +295,31 @@
             background: radial-gradient(circle at 20% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
                         radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
             pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 520px;
+            height: 520px;
+            max-width: 85vw;
+            max-height: 85vw;
+            background: url('logo.png') no-repeat center center;
+            background-size: contain;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1;
         }
 
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .hero h1 {
@@ -317,15 +357,16 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
-        }
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(234, 88, 12, 0.4); /* Narandžasta senka */
+    border: none;
+}
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
-        }
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(234, 88, 12, 0.6);
+}
 
         .btn-secondary {
             background: rgba(255,255,255,0.1);
@@ -343,7 +384,7 @@
 
         @media (max-width: 768px) {
             .hero {
-                padding: 4rem 1.5rem;
+                padding: 5rem 1.5rem;
             }
 
             .hero h1 {
@@ -437,7 +478,7 @@
         .service-image {
             width: 100%;
             height: 250px;
-            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+            background: url('pic1.jpg') center/cover no-repeat;
             border-radius: 0.8rem;
             margin-bottom: 1.5rem;
             position: relative;
@@ -488,13 +529,6 @@
             color: var(--accent);
             font-weight: bold;
             font-size: 1.2rem;
-        }
-
-        .price-tag {
-            font-size: 1.2rem;
-            color: var(--accent);
-            font-weight: 700;
-            margin-bottom: 1rem;
         }
 
         .contact-cta {
@@ -633,61 +667,52 @@
             text-decoration: underline;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.6rem;
-            font-weight: 600;
-            color: white;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 0.6rem;
-            font-family: inherit;
-            font-size: 0.95rem;
-            background: rgba(255,255,255,0.08);
-            color: white;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255,255,255,0.6);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-light);
-            background: rgba(255,255,255,0.12);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
+        .promo-banner {
+    background: var(--primary); /* Tamnoplava iz logotipa */
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.4);
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--accent); /* Tanka narandžasta linija ispod banera za detalj */
+}
 
         footer {
             background: #0f0f18;
             color: white;
             text-align: center;
-            padding: 2.5rem 1.5rem;
+            padding: 3rem 1.5rem 2rem 1.5rem;
             font-size: 0.95rem;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        .highlight {
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 90px;
+            width: auto;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-logo img:hover {
+            opacity: 1;
+        }
+
+        footer a {
             color: var(--accent-light);
+            text-decoration: none;
             font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -701,6 +726,25 @@
 
             nav ul {
                 flex-direction: column;
+            }
+
+            .logo {
+                font-size: 1rem;
+                gap: 0.5rem;
+            }
+
+            .logo-img {
+                height: 38px;
+            }
+
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            .promo-banner {
+                padding: 0.8rem 0.5rem;
+                font-size: 0.9rem;
+                letter-spacing: 0.3px;
             }
         }
 
@@ -748,8 +792,9 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <span class="logo-icon">🚚</span>
+                <img src="logo.png" alt="Kombi Prevoz Tadić Logo" class="logo-img">
                 <span class="logo-text">Kombi Prevoz Tadić</span>
+                <img src="Flag_of_Serbia.png" alt="Srbija" class="flag-img" style="height: 24px; opacity: 0.85; border-radius: 2px;">
             </div>
             <button class="dropdown-toggle closed" id="dropdownToggle"></button>
             <nav id="navbar">
@@ -769,13 +814,16 @@
         </div>
     </header>
 
+    <div class="promo-banner">
+        🎉 <strong>SPECIJALNA PONUDA!</strong> 10% POPUSTA NA SVE USLUGE PREVOZA PO BEOGRADU! 🎉
+    </div>
+
     <section class="hero">
         <div class="hero-content">
             <h1>Kombi Prevoz Tadić</h1>
             <p>Profesionalni useljaji, iseljaji i prevoz u Beogradu i širom Srbije</p>
             <div class="hero-buttons">
                 <a href="#kontakt" class="btn btn-primary">Zatraži Ponudu</a>
-                <a href="#uslugas" class="btn btn-secondary">Saznaj Više</a>
             </div>
         </div>
     </section>
@@ -783,11 +831,11 @@
     <section class="experience-section">
         <div class="experience-grid">
             <div class="experience-stat">
-                <div class="number">500+</div>
-                <p>Zadovoljnih Klijenata</p>
+                <div class="number">♾️</div>
+                <p>Mnogo Zadovoljnih Korisnika</p>
             </div>
             <div class="experience-stat">
-                <div class="number">8+</div>
+                <div class="number">5+</div>
                 <p>Godina Iskustva</p>
             </div>
             <div class="experience-stat">
@@ -813,7 +861,7 @@
                         <li>Iskusan tim radnika</li>
                         <li>Profesionalno pakovanje</li>
                         <li>Brza usluga (2-4 sata)</li>
-                        <li>Osigurano premještanje</li>
+                        <li>Osigurano premestanje</li>
                     </ul>
                     <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
                 </div>
@@ -821,7 +869,7 @@
                 <div class="service-card">
                     <div class="service-image"></div>
                     <h3>Kompletan Servis</h3>
-                    <p>Uključuje pakovanje, transport, raspakovanje i preuređenje. Potpuno rješenje od početka do kraja - mi ćemo se pobrinuti za sve.</p>
+                    <p>Uključuje pakovanje, transport, raspakovanje i preuređenje. Potpuno rešenje od početka do kraja - mi ćemo se pobrinuti za sve.</p>
                     <ul class="service-features">
                         <li>Kompletna usluga</li>
                         <li>Brzo i profesionalno</li>
@@ -838,46 +886,29 @@
         <div class="container">
             <h2 class="section-title">Iseljaji</h2>
             <p style="text-align: center; color: var(--text-light); font-size: 1.1rem; margin-bottom: 3rem;">
-                Bez briga i stresa - mi ćemo sve prebaciti. Pažljivo razpakovavanje i transport sa maksimalnom preciznošću.
+                Prepustite brigu i stres nama – mi ćemo sve prebaciti. Transport i pažljivo raspakivanje uz maksimalnu preciznost.
             </p>
+            
+            <div style="margin-bottom: 3rem; text-align: center;">
+                <img src="pic2.jpg" alt="Kombi Tadić - Prevoz i useljaji" style="max-width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 10px 40px rgba(0,0,0,0.2); max-height: 400px;">
+            </div>
+            
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" style="grid-column: 1 / -1;">
                     <div class="service-image"></div>
-                    <h3>Osnovni Iseljaji</h3>
-                    <p>Prevoz stvari iz starog doma. Brzo, sigurno i bez brige - samo nam ostavi detaljne upute što trebam prebaciti.</p>
+                    <h3>Kako funkcioniše iseljaj?</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                        <strong>Jednostavno je:</strong> Pošalji nam na Viber slike doma ili stvari koje trebas da prebacis i detaljno objasnjenje sta očekujete. 
+                        <br><br>
+                        Mi cemo prosuditi kompleksnost, vremenski okvir i sve potrebne radove, pa ce ti Tadić dati tačnu cenu bez skrivenih trosaka.
+                    </p>
                     <ul class="service-features">
-                        <li>Pažljivo razpakovavanje</li>
-                        <li>Brzo premještanje</li>
-                        <li>Odgovoran tim</li>
-                        <li>Čist prevoz</li>
+                        <li>📸 Pošalji nam slike na Viber</li>
+                        <li>📝 Detaljno objasnjenje sta očekujete</li>
+                        <li>🔍 Procenjujemo sve</li>
+                        <li>💰 Tačna cena bez skrivenih trosaka</li>
                     </ul>
-                    <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image"></div>
-                    <h3>Premium Iseljaji</h3>
-                    <p>Kompletan servis iseljaja sa raspakavanjem, sortiranjem i preuređenjem stvari na novoj lokaciji.</p>
-                    <ul class="service-features">
-                        <li>Kompletan servis</li>
-                        <li>Raspakovavanje i sortiranje</li>
-                        <li>Preuređenje prostora</li>
-                        <li>Čišćenje starog doma</li>
-                    </ul>
-                    <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image"></div>
-                    <h3>Brzi Iseljaji</h3>
-                    <p>Kada trebam samo prevoz - bez pakovanja i raspakovavanja. Fleksibilan raspored prema tvojim potrebama.</p>
-                    <ul class="service-features">
-                        <li>Brzi transport</li>
-                        <li>Fleksibilan raspored</li>
-                        <li>Siguran prevoz</li>
-                        <li>Bez dodatnih usluga</li>
-                    </ul>
-                    <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
+                    <a href="#kontakt" class="contact-cta">Pozovi Tadića Sad</a>
                 </div>
             </div>
         </div>
@@ -887,52 +918,30 @@
         <div class="container">
             <h2 class="section-title">Prevoz po Srbiji</h2>
             <p style="text-align: center; color: var(--text-light); font-size: 1.1rem; margin-bottom: 3rem;">
-                Pokrivamo cijelu Srbiju sa dodatnom naplatom za kilometražu i gorivo. Fleksibilan raspored i profesionalan pristup za sve vrste prevoza.
+                Pokrivamo celu Srbiju sa dodatnom naplatom za kilometražu i gorivo. Fleksibilan raspored i profesionalan pristup za sve vrste prevoza.
             </p>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" style="grid-column: 1 / -1;">
                     <div class="service-image"></div>
-                    <h3>Regionalni Prevoz</h3>
-                    <p>Transport do 100km od Beograda. Idealno za okolinu Beograda i obližnje gradove - brz i pouzdan servis.</p>
+                    <h3>Prevoz po celoj Srbiji</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                        <strong>Jednostavno je:</strong> Pošalji nam na Viber početnu lokaciju i konačnu destinaciju, te opis sta hoćes da prebacis. 
+                        <br><br>
+                        Mi cemo proceniti rastojanje, vremenski okvir, i sve potrebne radove, pa će ti Tadić dati tacnu cenu sa doplata za kilometrazu i gorivo prema dogovoru.
+                    </p>
                     <ul class="service-features">
-                        <li>Do 100km od Beograda</li>
-                        <li>Brz transport</li>
-                        <li>Siguran prevoz</li>
-                        <li>+ doplata za km</li>
+                        <li>📍 Posalji pocetnu i konacnu lokaciju</li>
+                        <li>📝 Detaljno objasnjenje sta trebas</li>
+                        <li>🔍 Procenjujemo sve uslove</li>
+                        <li>💰 Tacna cena + doplata za km/gorivo</li>
                     </ul>
-                    <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image"></div>
-                    <h3>Međuregionalni Prevoz</h3>
-                    <p>Transport na veće udaljenosti - do 300km. Pokrivamo sve veće gradove u Srbiji sa profesionalnim timom.</p>
-                    <ul class="service-features">
-                        <li>Do 300km od Beograda</li>
-                        <li>Dogovoreno vrijeme</li>
-                        <li>Fleksibilan raspored</li>
-                        <li>+ doplata za km</li>
-                    </ul>
-                    <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image"></div>
-                    <h3>Nacionalni Prevoz</h3>
-                    <p>Transport na cijelu Srbiju - bez ograničenja. Za sve vrste robe, namještaja i bilo kakve potrebe.</p>
-                    <ul class="service-features">
-                        <li>Bilo koja lokacija u Srbiji</li>
-                        <li>Dogovoreni datum</li>
-                        <li>Profesionalan pristup</li>
-                        <li>Ponuda po zahtjevu</li>
-                    </ul>
-                    <a href="#kontakt" class="contact-cta">Kontakt za cene</a>
+                    <a href="#kontakt" class="contact-cta">Pozovi Tadića Sad</a>
                 </div>
             </div>
 
             <div class="info-grid" style="margin-top: 3rem;">
                 <div class="info-card">
-                    <h4>Što je Uključeno?</h4>
+                    <h4>Sta je Uključeno?</h4>
                     <p>Pakovanje, transport, raspakovanje i čišćenje prostora. Kompletan servis prema dogovoru i tvojim potrebama.</p>
                 </div>
                 <div class="info-card">
@@ -955,44 +964,38 @@
             <div class="contact-methods">
                 <div class="contact-method">
                     <h4>📞 Telefon</h4>
-                    <p><a href="tel:+381600000000">+381 60 000 0000</a></p>
+                    <p><a href="tel:+381642892387">+381 64 289 2387</a></p>
                     <p style="font-size: 0.95rem; margin-top: 0.5rem;">24/7 dostupni</p>
-                </div>
-                <div class="contact-method">
-                    <h4>📧 Email</h4>
-                    <p><a href="mailto:info@kombiprevozTadic.rs">info@kombiprevozTadic.rs</a></p>
-                    <p style="font-size: 0.95rem; margin-top: 0.5rem;">Odgovor za 1 sat</p>
                 </div>
                 <div class="contact-method">
                     <h4>📍 Lokacija</h4>
                     <p>Beograd, Srbija</p>
-                    <p style="font-size: 0.95rem; margin-top: 0.5rem;">Posjetite nas</p>
                 </div>
             </div>
 
-            <div style="max-width: 500px; margin: 3rem auto; text-align: left;">
-                <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 700;">Pošalji nam poruku</h3>
-                <form style="background: rgba(255,255,255,0.08); padding: 2.5rem; border-radius: 1rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15);">
-                    <div class="form-group">
-                        <label for="name">Ime i Prezime</label>
-                        <input type="text" id="name" placeholder="Tvoje ime" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Telefon</label>
-                        <input type="tel" id="phone" placeholder="+381 6X XXX XXXX" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Poruka</label>
-                        <textarea id="message" placeholder="Što te zanima?" required></textarea>
-                    </div>
-                    <button type="submit" class="contact-cta" style="margin-top: 1rem;">Pošalji Poruku</button>
-                </form>
+            <div style="max-width: 600px; margin: 3rem auto; text-align: center;">
+                <h3 style="margin-bottom: 2rem; font-size: 1.5rem; font-weight: 700;">Spreman sam da me pozoves</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
+                    Pozovi nas sada na broj iznad. Tadić će se javiti u roku od sat vremena. 
+                    <br><br>
+                    <strong>Dostupni smo 24/7!</strong> Bez obzira na vreme, spremni smo da pogovorimo tvoje potrebe i damo ti najbolju cenu.
+                </p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Kombi Prevoz Tadić. Sva prava zadržana. | Useljaji • Iseljaji • Prevoz | Beograd i Srbija</p>
+        <div class="footer-logo">
+            <img src="logo.png" alt="Kombi Prevoz Tadić Logo">
+        </div>
+        <p style="display: flex; justify-content: center; align-items: center; gap: 1rem;">
+            <img src="Flag_of_Serbia.png" alt="Srbija" style="height: 20px; opacity: 0.7; border-radius: 2px;">
+            &copy; 2026 Kombi Prevoz Tadić. Sva prava zadržana. | Useljaji • Iseljaji • Prevoz | Beograd i Srbija
+            <img src="Flag_of_Serbia.png" alt="Srbija" style="height: 20px; opacity: 0.7; border-radius: 2px;">
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem; color: rgba(255,255,255,0.7);">
+            Designed by <a href="https://612designagency.com/" target="_blank" rel="noopener noreferrer">612design</a>
+        </p>
     </footer>
 
     <script>
@@ -1024,25 +1027,6 @@
                 dropdownToggle.classList.add('closed');
             }
         });
-
-        // Form submission (placeholder - trebate backend za pravi submit)
-        const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const name = document.getElementById('name').value;
-                const phone = document.getElementById('phone').value;
-                const message = document.getElementById('message').value;
-                
-                if (name && phone && message) {
-                    // U praksi, trebate poslati ove podatke na server
-                    alert(`Hvala ${name}! Primili smo tvoju poruku. Kontaktiraćemo te na ${phone}.`);
-                    form.reset();
-                } else {
-                    alert('Molimo popuni sva polja!');
-                }
-            });
-        }
     </script>
 </body>
 </html>
