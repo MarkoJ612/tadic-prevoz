@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sr">
+
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -17,8 +18,10 @@
         :root {
             --primary: #0f172a;
             --primary-light: #1e293b;
-            --accent: #ea580c;       /* Prava, energična narandžasta */
-            --accent-light: #f97316; /* Svetlija narandžasta za hover efekte */
+            --accent: #ea580c;
+            /* Prava, energična narandžasta */
+            --accent-light: #f97316;
+            /* Svetlija narandžasta za hover efekte */
             --text-dark: #0f172a;
             --text-light: #64748b;
             --bg-light: #f8fafc;
@@ -27,9 +30,17 @@
         }
 
         @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         body {
@@ -40,15 +51,17 @@
         }
 
         header {
-            background: linear-gradient(135deg, var(--accent) 0%, #ea580c 100%); /* Narandžasti gradijent */
-            color: var(--primary); /* Menjamo osnovnu boju teksta u tamnoplavu */
+            background: linear-gradient(135deg, var(--accent) 0%, #ea580c 100%);
+            /* Narandžasti gradijent */
+            color: var(--primary);
+            /* Menjamo osnovnu boju teksta u tamnoplavu */
             padding: 0.8rem 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             position: sticky;
             top: 0;
             z-index: 100;
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .header-container {
@@ -83,7 +96,8 @@
 
         .logo-text {
             background: none;
-            -webkit-text-fill-color: var(--primary); /* Tamnoplava boja */
+            -webkit-text-fill-color: var(--primary);
+            /* Tamnoplava boja */
             color: var(--primary);
         }
 
@@ -94,9 +108,11 @@
         }
 
         nav a {
-            color: var(--primary); /* Tamnoplava slova */
+            color: var(--primary);
+            /* Tamnoplava slova */
             text-decoration: none;
-            font-weight: 600; /* Malo deblja slova za bolju čitljivost */
+            font-weight: 600;
+            /* Malo deblja slova za bolju čitljivost */
             font-size: 0.95rem;
             transition: all 0.3s ease;
             position: relative;
@@ -104,7 +120,8 @@
         }
 
         nav a:hover {
-            color: white; /* Bela boja pri prelasku mišem */
+            color: white;
+            /* Bela boja pri prelasku mišem */
         }
 
         nav a::after {
@@ -114,7 +131,8 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: white; /* Bela linija ispod linka */
+            background: white;
+            /* Bela linija ispod linka */
             transition: width 0.3s ease;
         }
 
@@ -159,11 +177,11 @@
             top: 100%;
             left: 1.5rem;
             right: 1.5rem;
-            background: rgba(255,255,255,0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 0.8rem;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             margin-top: 0;
             z-index: 200;
             animation: slideDown 0.3s ease;
@@ -174,6 +192,7 @@
                 opacity: 0;
                 transform: translateY(-10px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -288,7 +307,7 @@
             right: 0;
             bottom: 0;
             background: radial-gradient(circle at 20% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
             pointer-events: none;
             z-index: 1;
         }
@@ -375,14 +394,14 @@
         }
 
         .btn-secondary {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             border-color: var(--accent-light);
             color: var(--accent-light);
             transform: translateY(-3px);
@@ -476,7 +495,7 @@
         }
 
         .service-card:hover {
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
             transform: translateY(-8px);
             border-color: var(--accent);
         }
@@ -510,7 +529,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
         }
 
         .service-card h3 {
@@ -591,7 +610,7 @@
         }
 
         .info-card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transform: translateY(-4px);
         }
 
@@ -649,16 +668,16 @@
 
         .contact-method {
             padding: 2rem;
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 1rem;
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
 
         .contact-method:hover {
-            background: rgba(255,255,255,0.12);
-            border-color: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.3);
             transform: translateY(-4px);
         }
 
@@ -706,7 +725,7 @@
             text-align: center;
             padding: 3rem 1.5rem 2rem 1.5rem;
             font-size: 0.95rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-logo {
@@ -792,7 +811,7 @@
         }
 
         .experience-stat:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transform: translateY(-4px);
         }
 
@@ -809,13 +828,15 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
                 <img src="logo.png" alt="Kombi Prevoz Tadić Logo" class="logo-img">
                 <span class="logo-text">Kombi Prevoz Tadić</span>
-                <img src="Flag_of_Serbia.png" alt="Srbija" class="flag-img" style="height: 24px; opacity: 0.85; border-radius: 2px;">
+                <img src="Flag_of_Serbia.png" alt="Srbija" class="flag-img"
+                    style="height: 24px; opacity: 0.85; border-radius: 2px;">
             </div>
             <button class="dropdown-toggle closed" id="dropdownToggle"></button>
             <nav id="navbar">
@@ -836,7 +857,18 @@
     </header>
 
     <div class="promo-banner">
-        <svg style="display: inline; width: 28px; height: 28px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 10.26 24 10.26 17.55 15.74 19.64 24 12 19.52 4.36 24 6.45 15.74 0 10.26 8.91 10.26 12 2"></polygon></svg> <strong>SPECIJALNA PONUDA!</strong> 10% POPUSTA NA SVE USLUGE PREVOZA PO BEOGRADU! <svg style="display: inline; width: 28px; height: 28px; margin-left: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 10.26 24 10.26 17.55 15.74 19.64 24 12 19.52 4.36 24 6.45 15.74 0 10.26 8.91 10.26 12 2"></polygon></svg>
+        <svg style="display: inline; width: 28px; height: 28px; margin-right: 8px; vertical-align: middle;"
+            viewBox="0 0 24 24" fill="currentColor">
+            <polygon
+                points="12 2 15.09 10.26 24 10.26 17.55 15.74 19.64 24 12 19.52 4.36 24 6.45 15.74 0 10.26 8.91 10.26 12 2">
+            </polygon>
+        </svg> <strong>SPECIJALNA PONUDA!</strong> 10% POPUSTA NA SVE USLUGE PREVOZA PO BEOGRADU! <svg
+            style="display: inline; width: 28px; height: 28px; margin-left: 8px; vertical-align: middle;"
+            viewBox="0 0 24 24" fill="currentColor">
+            <polygon
+                points="12 2 15.09 10.26 24 10.26 17.55 15.74 19.64 24 12 19.52 4.36 24 6.45 15.74 0 10.26 8.91 10.26 12 2">
+            </polygon>
+        </svg>
     </div>
 
     <section class="hero">
@@ -848,7 +880,14 @@
             </div>
             <div style="margin-top: 2rem;">
                 <p style="font-size: 1.1rem; color: rgba(255,255,255,0.9);">
-                    <svg style="display: inline; width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> <a href="tel:+381665601636" style="color: var(--accent-light); font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Pozovi odmah: +381 66 560 1636</a>
+                    <svg style="display: inline; width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg> <a href="tel:+381665601636"
+                        style="color: var(--accent-light); font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Pozovi
+                        odmah: +381 66 560 1636</a>
                 </p>
             </div>
         </div>
@@ -858,7 +897,13 @@
         <div class="experience-grid">
             <div class="experience-stat">
                 <div class="number">
-                    <svg style="width: 70px; height: 50px; display: inline; margin-bottom: 10px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c0-2.5 1.5-5 4-5 2 0 3 1.5 3 3.5S8 13.5 6 13.5c-2.5 0-4-2.5-4-5zM22 12c0-2.5-1.5-5-4-5-2 0-3 1.5-3 3.5s1 2.5 3 2.5c2.5 0 4-2.5 4-5z"></path></svg>
+                    <svg style="width: 60px; height: 40px; display: inline; margin-bottom: 10px;" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M18.178 8c5.096 0 5.096 8 0 8-2.548 0-4.324-1.782-6.178-4-1.854 2.218-3.63 4-6.178 4-5.096 0-5.096-8 0-8 2.548 0 4.324 1.782 6.178 4 1.854-2.218 3.63-4 6.178-4z">
+                        </path>
+                    </svg>
                 </div>
                 <p>Mnogo zadovoljnih korisnika</p>
             </div>
@@ -884,7 +929,8 @@
                 <div class="service-card">
                     <div class="service-image"></div>
                     <h3>Lokalni prevoz – Useljenja</h3>
-                    <p>Brz i siguran prevoz svih tvojih stvari u novi dom. Naš profesionalni tim će se pobrinuti da sve bude pravilno spakovano i zaštićeno.</p>
+                    <p>Brz i siguran prevoz svih tvojih stvari u novi dom. Naš profesionalni tim će se pobrinuti da sve
+                        bude pravilno spakovano i zaštićeno.</p>
                     <ul class="service-features">
                         <li>Iskusan tim radnika</li>
                         <li>Profesionalno pakovanje</li>
@@ -897,7 +943,8 @@
                 <div class="service-card">
                     <div class="service-image pic3"></div>
                     <h3>Kompletna usluga</h3>
-                    <p>Uključuje pakovanje, transport, raspakovanje i preuređenje. Potpuno rešenje od početka do kraja – mi ćemo se pobrinuti za sve.</p>
+                    <p>Uključuje pakovanje, transport, raspakovanje i preuređenje. Potpuno rešenje od početka do kraja –
+                        mi ćemo se pobrinuti za sve.</p>
                     <ul class="service-features">
                         <li>Kompletna usluga</li>
                         <li>Brzo i profesionalno</li>
@@ -914,23 +961,43 @@
         <div class="container">
             <h2 class="section-title">Iseljenja</h2>
             <p style="text-align: center; color: var(--text-light); font-size: 1.1rem; margin-bottom: 3rem;">
-                Prepusti brigu i stres nama – mi ćemo sve prebaciti. Transport i pažljivo raspakivanje uz maksimalnu preciznost.
+                Prepusti brigu i stres nama – mi ćemo sve prebaciti. Transport i pažljivo raspakivanje uz maksimalnu
+                preciznost.
             </p>
-            
+
             <div class="services-grid">
                 <div class="service-card" style="grid-column: 1 / -1;">
                     <div class="service-image pic4"></div>
                     <h3>Kako funkcioniše iseljenje?</h3>
                     <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                        <strong>Jednostavno je:</strong> Pošalji nam na Viber slike doma ili stvari koje treba da prebaciš i detaljno objašnjenje šta očekuješ. 
+                        <strong>Jednostavno je:</strong> Pošalji nam na Viber slike doma ili stvari koje treba da
+                        prebaciš i detaljno objašnjenje šta očekuješ.
                         <br><br>
-                        Mi ćemo proceniti kompleksnost, vremenski okvir i sve potrebne radove, pa će ti Tadić dati tačnu cenu bez skrivenih troškova.
+                        Mi ćemo proceniti kompleksnost, vremenski okvir i sve potrebne radove, pa će ti Tadić dati tačnu
+                        cenu bez skrivenih troškova.
                     </p>
                     <ul class="service-features">
-                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg> Pošalji nam slike na Viber</li>
-                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> Detaljno objašnjenje šta očekuješ</li>
-                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg> Procenjujemo sve uslove</li>
-                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> Tačna cena bez skrivenih troškova</li>
+                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <path d="m21 15-5-5L5 21"></path>
+                            </svg> Pošalji nam slike na Viber</li>
+                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg> Detaljno objašnjenje šta očekuješ</li>
+                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg> Procenjujemo sve uslove</li>
+                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg> Tačna cena bez skrivenih troškova</li>
                     </ul>
                     <a href="#kontakt" class="contact-cta">Pozovi Tadića sad</a>
                 </div>
@@ -942,22 +1009,41 @@
         <div class="container">
             <h2 class="section-title">Prevoz po Srbiji</h2>
             <p style="text-align: center; color: var(--text-light); font-size: 1.1rem; margin-bottom: 3rem;">
-                Pokrivamo celu Srbiju uz dodatnu naplatu za kilometražu i gorivo. Fleksibilan raspored i profesionalan pristup za sve vrste prevoza.
+                Pokrivamo celu Srbiju uz dodatnu naplatu za kilometražu i gorivo. Fleksibilan raspored i profesionalan
+                pristup za sve vrste prevoza.
             </p>
             <div class="services-grid">
                 <div class="service-card" style="grid-column: 1 / -1;">
                     <div class="service-image pic5"></div>
                     <h3>Prevoz po celoj Srbiji</h3>
                     <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                        <strong>Jednostavno je:</strong> Pošalji nam na Viber početnu lokaciju i konačnu destinaciju, kao i opis šta hoćeš da prebaciš. 
+                        <strong>Jednostavno je:</strong> Pošalji nam na Viber početnu lokaciju i konačnu destinaciju,
+                        kao i opis šta hoćeš da prebaciš.
                         <br><br>
-                        Mi ćemo proceniti rastojanje, vremenski okvir i sve potrebne radove, pa će ti Tadić dati tačnu cenu sa doplatom za kilometražu i gorivo prema dogovoru.
+                        Mi ćemo proceniti rastojanje, vremenski okvir i sve potrebne radove, pa će ti Tadić dati tačnu
+                        cenu sa doplatom za kilometražu i gorivo prema dogovoru.
                     </p>
                     <ul class="service-features">
-                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Pošalji početnu i konačnu lokaciju</li>
-                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> Detaljno objašnjenje šta ti treba</li>
-                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg> Procenjujemo sve uslove</li>
-                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> Tačna cena + doplata za km/gorivo</li>
+                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg> Pošalji početnu i konačnu lokaciju</li>
+                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg> Detaljno objašnjenje šta ti treba</li>
+                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg> Procenjujemo sve uslove</li>
+                        <li><svg style="display: inline; width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg> Tačna cena + doplata za km/gorivo</li>
                     </ul>
                     <a href="#kontakt" class="contact-cta">Pozovi Tadića sad</a>
                 </div>
@@ -966,7 +1052,8 @@
             <div class="info-grid" style="margin-top: 3rem;">
                 <div class="info-card">
                     <h4>Šta je uključeno?</h4>
-                    <p>Pakovanje, transport, raspakovanje i čišćenje prostora. Kompletna usluga prema dogovoru i tvojim potrebama.</p>
+                    <p>Pakovanje, transport, raspakovanje i čišćenje prostora. Kompletna usluga prema dogovoru i tvojim
+                        potrebama.</p>
                 </div>
                 <div class="info-card">
                     <h4>Garancija</h4>
@@ -974,7 +1061,8 @@
                 </div>
                 <div class="info-card">
                     <h4>Fleksibilnost</h4>
-                    <p>Prilagođavamo se tvojim potrebama i rasporedu. Radi sa nama kada ti odgovara, kako god ti zatreba.</p>
+                    <p>Prilagođavamo se tvojim potrebama i rasporedu. Radi sa nama kada ti odgovara, kako god ti
+                        zatreba.</p>
                 </div>
             </div>
         </div>
@@ -987,17 +1075,32 @@
 
             <div class="contact-methods">
                 <div class="contact-method">
-                    <h4><svg style="display: inline; width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Telefon</h4>
+                    <h4><svg style="display: inline; width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>Telefon</h4>
                     <p><a href="tel:+381665601636">+381 66 560 1636</a></p>
                     <p style="font-size: 0.95rem; margin-top: 0.5rem;">Dostupni 24/7</p>
                 </div>
                 <div class="contact-method">
-                    <h4><svg style="display: inline; width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Lokacija</h4>
+                    <h4><svg style="display: inline; width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>Lokacija</h4>
                     <p>Beograd, Srbija</p>
                 </div>
                 <div class="contact-method">
-                    <h4><svg style="display: inline; width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Email</h4>
-                    <p><a href="mailto:kombiprevozbeograd14@gmail.com" style="color: var(--accent-light); text-decoration: none;">kombiprevozbeograd14@gmail.com</a></p>
+                    <h4><svg style="display: inline; width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>Email</h4>
+                    <p><a href="mailto:kombiprevozbeograd14@gmail.com"
+                            style="color: var(--accent-light); text-decoration: none;">kombiprevozbeograd14@gmail.com</a>
+                    </p>
                     <p style="font-size: 0.95rem; margin-top: 0.5rem;">Odgovaramo u najkraćem roku</p>
                 </div>
             </div>
@@ -1005,9 +1108,10 @@
             <div style="max-width: 600px; margin: 3rem auto; text-align: center;">
                 <h3 style="margin-bottom: 2rem; font-size: 1.5rem; font-weight: 700;">Spreman sam za tvoj poziv</h3>
                 <p style="font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
-                    Pozovi nas sada na broj iznad. Tadić će se javiti u najkraćem mogućem roku. 
+                    Pozovi nas sada na broj iznad. Tadić će se javiti u najkraćem mogućem roku.
                     <br><br>
-                    <strong>Dostupni smo 24/7!</strong> Bez obzira na vreme, spremni smo da saslušamo tvoje potrebe i ponudimo ti najbolju cenu.
+                    <strong>Dostupni smo 24/7!</strong> Bez obzira na vreme, spremni smo da saslušamo tvoje potrebe i
+                    ponudimo ti najbolju cenu.
                 </p>
             </div>
         </div>
@@ -1033,7 +1137,7 @@
         const dropdownMenu = document.getElementById('dropdownMenu');
 
         if (dropdownToggle && dropdownMenu) {
-            dropdownToggle.addEventListener('click', function(e) {
+            dropdownToggle.addEventListener('click', function (e) {
                 e.stopPropagation();
                 dropdownMenu.classList.toggle('open');
                 dropdownToggle.classList.toggle('open');
@@ -1043,7 +1147,7 @@
             // Zatvori menu kad klikneš na link
             const menuLinks = dropdownMenu.querySelectorAll('a');
             menuLinks.forEach(link => {
-                link.addEventListener('click', function() {
+                link.addEventListener('click', function () {
                     dropdownMenu.classList.remove('open');
                     dropdownToggle.classList.remove('open');
                     dropdownToggle.classList.add('closed');
@@ -1051,7 +1155,7 @@
             });
 
             // Zatvori menu kad klikneš van njega
-            document.addEventListener('click', function(e) {
+            document.addEventListener('click', function (e) {
                 if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
                     dropdownMenu.classList.remove('open');
                     dropdownToggle.classList.remove('open');
@@ -1061,4 +1165,5 @@
         }
     </script>
 </body>
+
 </html>
